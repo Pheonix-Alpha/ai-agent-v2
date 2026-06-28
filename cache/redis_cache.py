@@ -4,9 +4,8 @@ import time
 import os
 
 
-r = redis.Redis(
-    host=os.getenv("REDIS_HOST", "redis"),
-    port=6379,
+r = redis.from_url(
+    os.getenv("REDIS_URL"),
     decode_responses=True
 )
 
